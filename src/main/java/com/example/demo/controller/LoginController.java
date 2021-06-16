@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -12,13 +14,13 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/user/login")
+    @RequestMapping("/admin/login")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Model model,
                         HttpSession session){
-        //具体的业务
-        if(!StringUtils.isEmpty(username)&& "123456".equals(password)){
+        //具体的业务 数据表employee暂时没有密码属性
+        if("admin".equals(username)&& "123456".equals(password)){
             session.setAttribute("loginUser",username);
             return "redirect:/main.html";
         }else{

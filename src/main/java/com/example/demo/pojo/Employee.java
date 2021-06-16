@@ -4,21 +4,21 @@ import java.util.Date;
 
 public class Employee {
     private Integer id;
-    private String lastName;
+    private String name;
     private String email;
     private Integer gender;//0:女 1:男
-    private Department department;
+    private Integer departmentId;
     private Date birth;
 
     public Employee() {
     }
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department, Date birth) {
+    public Employee(Integer id, String name, String email, Integer gender, Integer departmentId, Date birth) {
         this.id = id;
-        this.lastName = lastName;
+        this.name = name;
         this.email = email;
         this.gender = gender;
-        this.department = department;
+        this.departmentId = departmentId;
         this.birth = birth;
     }
 
@@ -30,12 +30,12 @@ public class Employee {
         this.id = id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getName() {
+        return name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -54,12 +54,12 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Department getDepartment() {
-        return department;
+    public Integer getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public Date getBirth() {
